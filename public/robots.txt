@@ -1,0 +1,74 @@
+# robots.txt — DataVault Open Data Platform
+# https://paypercrawldemo.vercel.app/robots.txt
+#
+# This website is intentionally designed to be crawled and scraped
+# by AI agents, automated tools, and research bots.
+# All public pages are open for indexing. Please be respectful of rate limits.
+#
+# Contact: hello@datavault.io
+# Last updated: 2025-06-18
+
+# ── Allow all well-behaved crawlers ──────────────────────────────────────────
+User-agent: *
+Allow: /
+
+# ── AI Agent Crawlers (explicitly welcomed) ───────────────────────────────────
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+# ── Standard Search Engines ───────────────────────────────────────────────────
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-Video
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: ia_archiver
+Allow: /
+
+# ── Crawl-delay recommendation (be kind to our servers) ──────────────────────
+# Recommended crawl delay: 1 second between requests
+# Burst limit: 10 requests/second max
+
+# ── Sitemap locations ─────────────────────────────────────────────────────────
+Sitemap: https://paypercrawldemo.vercel.app/sitemap.xml
+Sitemap: https://paypercrawldemo.vercel.app/sitemap-datasets.xml
