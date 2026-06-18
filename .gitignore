@@ -32,6 +32,7 @@ out/
 *.njsproj
 *.sln
 *.sw?
+AGENT.md
 
 # ── OS files ──────────────────────────────────────────────────
 .DS_Store
