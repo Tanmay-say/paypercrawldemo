@@ -1,0 +1,234 @@
+.datasets__header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 48px;
+}
+
+.datasets__title {
+  font-size: clamp(28px, 4vw, 44px);
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.datasets__subtitle {
+  color: var(--text-secondary);
+  font-size: 16px;
+}
+
+/* Filter */
+.datasets__filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.datasets__filter-btn {
+  background: transparent;
+  border: 1px solid var(--border-glass);
+  border-radius: 100px;
+  padding: 8px 20px;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: var(--font-body);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.datasets__filter-btn:hover {
+  border-color: var(--accent-blue);
+  color: var(--text-primary);
+}
+
+.datasets__filter-btn.active {
+  background: var(--gradient-primary);
+  border-color: transparent;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Grid */
+.datasets__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+/* Card */
+.datasets__card {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  cursor: default;
+}
+
+.datasets__card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.datasets__update {
+  font-size: 11px;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.datasets__update::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-green);
+  animation: pulse 2s infinite;
+  flex-shrink: 0;
+}
+
+.datasets__card-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.datasets__card-desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* Metadata */
+.datasets__meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding: 16px;
+  background: rgba(255,255,255,0.02);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-glass);
+}
+
+.datasets__meta div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.datasets__meta dt {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.datasets__meta dd {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Tags */
+.datasets__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* Expanded */
+.datasets__expanded {
+  background: rgba(59,130,246,0.04);
+  border: 1px solid rgba(59,130,246,0.12);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  animation: fadeInUp 0.3s ease;
+}
+
+.datasets__api-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.datasets__api-endpoint {
+  display: block;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  color: var(--accent-cyan);
+  word-break: break-all;
+  background: rgba(0,0,0,0.3);
+  padding: 10px 12px;
+  border-radius: 6px;
+}
+
+.datasets__fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.datasets__field {
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  background: rgba(139,92,246,0.1);
+  border: 1px solid rgba(139,92,246,0.2);
+  color: #a78bfa;
+  border-radius: 4px;
+  padding: 3px 8px;
+}
+
+.datasets__format-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Footer */
+.datasets__card-footer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto;
+  flex-wrap: wrap;
+}
+
+.datasets__detail-btn {
+  font-size: 13px;
+  padding: 9px 16px;
+}
+
+.datasets__access-btn {
+  font-size: 13px;
+  padding: 9px 16px;
+  margin-left: auto;
+}
+
+.datasets__footer-cta {
+  text-align: center;
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.datasets__footer-cta p {
+  color: var(--text-secondary);
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .datasets__grid { grid-template-columns: 1fr; }
+  .datasets__meta { grid-template-columns: 1fr 1fr; }
+}
