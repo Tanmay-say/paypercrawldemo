@@ -55,6 +55,19 @@ function isAiBot(userAgent) {
 }
 
 /**
+ * Generates a 32-byte (bytes32) hex nonce of the form 0x[64 hex chars].
+ *
+ * The PayPerCrawl smart contract requires `bytes32` for replay protection;
+ * UUIDs (36 chars with dashes) are rejected by viem's ABI encoder. Always
+ * use this helper — never `crypto.randomUUID()`.
+ */
+function freshNonceBytes32() {
+  const bytes = new Uint8Array(32)
+  crypto.getRandomValues(bytes)
+  return '0x' + Array.from(bytes, b => b.toString(16).padStart(2, '0')).join('')
+}
+
+/**
  * Builds a 402 Payment Required JSON response with payment terms and a nonce.
  */
 function paymentRequired(nonce, path) {
@@ -114,7 +127,7 @@ export default async function middleware(request) {
 
   // ── 2a. No payment headers → issue 402 with a fresh nonce ─────────────────
   if (!receipt || !nonce) {
-    const freshNonce = crypto.randomUUID()
+    const freshNonce = freshNonceBytes32()
     return paymentRequired(freshNonce, path)
   }
 
@@ -138,7 +151,7 @@ export default async function middleware(request) {
     }
 
     // Payment invalid / expired — return 402 with a new nonce
-    const freshNonce = crypto.randomUUID()
+    const freshNonce = freshNonceBytes32()
     return paymentRequired(freshNonce, path)
   } catch (err) {
     // Gateway unreachable — fail open (let the bot through) to avoid
